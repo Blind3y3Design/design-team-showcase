@@ -1,6 +1,8 @@
 /**
  * @type {import('tinacms').Collection}
  */
+import { homeDesign, homeHero, homeWriting } from "../blocks";
+
 export default {
   label: "Home",
   name: "home",
@@ -8,10 +10,11 @@ export default {
   format: "mdx",
   fields: [
     {
-      name: "body",
-      label: "Main Content",
-      type: "rich-text",
-      isBody: true,
+      name: "blocks",
+      label: "Blocks",
+      type: "object",
+      list: true,
+      templates: [homeDesign, homeHero, homeWriting],
     },
   ],
   ui: {

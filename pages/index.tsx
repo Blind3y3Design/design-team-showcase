@@ -1,4 +1,6 @@
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { Hero } from "../components/home/blocks/hero";
+import { Blocks } from "../components/home/blocks";
 import { Layout } from "../components/Layout";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { client } from "../tina/__generated__/client";
@@ -11,12 +13,11 @@ export default function Home(props) {
     data: props.data,
   });
 
-  const content = data.home.body;
+  const blocks = data.home.blocks;
+
   return (
     <Layout>
-      <div data-tina-field={tinaField(data.home, "body")}>
-        <TinaMarkdown content={content} />
-      </div>
+      <Blocks blocks={blocks} />
     </Layout>
   );
 }

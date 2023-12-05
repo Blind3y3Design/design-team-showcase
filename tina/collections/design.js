@@ -3,7 +3,7 @@
  */
 export default {
   label: "Design",
-  name: "designPage",
+  name: "design",
   path: "content/design",
   format: "mdx",
   fields: [

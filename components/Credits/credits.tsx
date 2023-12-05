@@ -1,4 +1,4 @@
-import styles from "./Credits.module.css";
+import styles from "./credits.module.css";
 
 export const Credits = (props) => {
   return (
@@ -7,7 +7,7 @@ export const Credits = (props) => {
       {props.data.map((item) => {
         const author = item.authors;
         return (
-          <div className={styles["credit-module"]}>
+          <div className={styles["credit-module"]} key={author.name}>
             <div className={styles["credit-module__avatar"]}>
               <img src={author.avatar} alt={author.name} loading="lazy" />
             </div>
